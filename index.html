@@ -14,90 +14,123 @@
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f0f2f5;
-      color: #333;
+      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+      color: #eee;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Estrelas */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+      opacity: 0.3;
+      z-index: 0;
     }
 
     header {
-      background: #eea508;
+      background: linear-gradient(90deg, #ffbb00, #ff7300);
       color: white;
-      padding: 20px;
+      padding: 25px;
       text-align: center;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
     }
 
     header h1 {
-      font-size: 2rem;
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.6);
     }
 
     p.intro {
       text-align: center;
-      margin: 20px 0;
-      font-size: 1.1rem;
+      margin: 20px auto;
+      font-size: 1.2rem;
+      color: #ccc;
+      position: relative;
+      z-index: 1;
     }
 
     /* Grid de cards */
     .dashboard {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 30px;
+      position: relative;
+      z-index: 1;
     }
 
     .card {
-      background: white;
-      border-radius: 10px;
-      padding: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 15px;
+      padding: 25px;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 15px 40px rgba(255, 183, 0, 0.3);
     }
 
     .card h2 {
-      margin-bottom: 15px;
-      font-size: 1.3rem;
-      color: #0078d4;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+      color: #ffbb00;
+      text-shadow: 0 0 10px rgba(255,183,0,0.7);
     }
 
     .card a {
       display: block;
-      margin: 8px 0;
+      margin: 10px 0;
       text-decoration: none;
-      color: #555;
-      padding: 10px 15px;
-      border-radius: 5px;
-      transition: background 0.3s, color 0.3s;
+      color: #eee;
+      padding: 12px 15px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: background 0.3s, color 0.3s, transform 0.2s;
     }
 
     .card a:hover {
-      background: #0078d4;
+      background: linear-gradient(90deg, #ffbb00, #ff7300);
       color: white;
+      transform: scale(1.05);
     }
 
     /* Responsivo */
     @media (max-width: 600px) {
       header h1 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+      }
+      .card h2 {
+        font-size: 1.2rem;
       }
     }
   </style>
 </head>
-<body><br>
+<body>
   <header>
-    <h1>Painéis Power BI</h1>
+    <h1>🚀 Painéis Power BI</h1>
   </header>
   <p class="intro">Escolha a área para acessar os painéis desejados:</p>
 
   <div class="dashboard">
     <!-- Comercial -->
     <div class="card">
-      <h2>Comercial</h2>
+      <h2>🌍 Comercial</h2>
       <a href="https://app.powerbi.com/groups/1cda7474-055d-46ad-baeb-93faea9f5fee/reports/02de288c-53cb-43be-afe9-f4a71ea1d42f/ReportSectioneadff5ebc470aae92b03?experience=power-bi" target="_blank">Cobertura Estoque Novo</a>
       <a href="https://app.powerbi.com/groups/1cda7474-055d-46ad-baeb-93faea9f5fee/reports/3a1e3d79-e35d-46a0-9af5-e8ed9b9f5ae5/ReportSection930682a1b25460897bba?experience=power-bi" target="_blank">E-commerce</a>
       <a href="https://app.powerbi.com/groups/1cda7474-055d-46ad-baeb-93faea9f5fee/reports/b9f96eb2-06f5-4d0c-8bdc-c306852a9354/a20e7c68803638205fc8?experience=power-bi" target="_blank">Fora de Linhas</a>
@@ -106,24 +139,22 @@
 
     <!-- Logística -->
     <div class="card">
-      <h2>Logística</h2>
+      <h2>🚚 Logística</h2>
       <a href="https://app.powerbi.com/groups/716f3546-c9c8-41f7-bb20-d2a3212fbf35/reports/a13cb3ff-5bf0-4430-bb6b-906c4d78345d/dbd1092b6d3816c7c437?experience=power-bi" target="_blank">Carteira de Pedidos</a>
     </div>
 
     <!-- Inteligência -->
     <div class="card">
-      <h2>Inteligência</h2>
+      <h2>🧠 Inteligência</h2>
       <a href="#" target="_blank">Painel Inteligência 1</a>
     </div>
 
     <!-- Auditoria -->
     <div class="card">
-      <h2>Auditoria</h2>
+      <h2>🛰️ Auditoria</h2>
       <a href="#" target="_blank">Check List</a>
       <a href="#" target="_blank">Divergências</a>
-      <p>Testes</p>
     </div>
-    <p>tateeeoeoeoeeo</p>
   </div>
 </body>
 </html>
