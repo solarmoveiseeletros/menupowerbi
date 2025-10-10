@@ -4,157 +4,176 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Solar - Painéis Power BI</title>
+
   <style>
-    /* Reset e base */
+    /* Reset */
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-      color: #eee;
+      background-color: #f8f8f8;
+      color: #333;
       min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    /* Estrelas */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
-      opacity: 0.3;
-      z-index: 0;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
-      background: linear-gradient(90deg, #ffbb00, #ff7300);
-      color: white;
-      padding: 25px;
       text-align: center;
-      position: relative;
-      z-index: 1;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      padding: 25px 20px;
+      background: linear-gradient(90deg, #fff, #f5f5f5);
+      border-bottom: 3px solid #f57c00;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header img {
+      width: 110px;
+      height: auto;
+      margin-bottom: 10px;
     }
 
     header h1 {
-      font-size: 2.2rem;
-      letter-spacing: 2px;
-      text-shadow: 0 0 10px rgba(255,255,255,0.6);
+      font-size: 1.8rem;
+      color: #f57c00;
+      font-weight: 600;
     }
 
     p.intro {
       text-align: center;
-      margin: 20px auto;
-      font-size: 1.2rem;
-      color: #ccc;
-      position: relative;
-      z-index: 1;
+      margin: 30px auto 10px;
+      font-size: 1.1rem;
+      color: #555;
     }
 
-    /* Grid de cards */
+    /* Grid */
     .dashboard {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 25px;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 30px;
-      position: relative;
-      z-index: 1;
+      max-width: 1100px;
+      width: 90%;
+      margin: 30px auto 60px;
     }
 
     .card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 15px;
-      padding: 25px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      padding: 25px 20px;
       text-align: center;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 15px 40px rgba(255, 183, 0, 0.3);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
     .card h2 {
       margin-bottom: 20px;
-      font-size: 1.4rem;
-      color: #ffbb00;
-      text-shadow: 0 0 10px rgba(255,183,0,0.7);
+      font-size: 1.3rem;
+      color: #f57c00;
+      font-weight: 600;
     }
 
     .card a {
       display: block;
       margin: 10px 0;
-      text-decoration: none;
-      color: #eee;
-      padding: 12px 15px;
+      padding: 10px 14px;
       border-radius: 8px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: background 0.3s, color 0.3s, transform 0.2s;
+      text-decoration: none;
+      color: #333;
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      transition: all 0.2s ease;
     }
 
     .card a:hover {
-      background: linear-gradient(90deg, #ffbb00, #ff7300);
-      color: white;
-      transform: scale(1.05);
+      background: #f57c00;
+      color: #fff;
+      border-color: #f57c00;
+    }
+
+    footer {
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+      padding: 20px;
+      background: #f5f5f5;
+      border-top: 1px solid #ddd;
+      margin-top: auto;
     }
 
     /* Responsivo */
     @media (max-width: 600px) {
       header h1 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
       }
       .card h2 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+      }
+      .card a {
+        font-size: 0.95rem;
       }
     }
   </style>
 </head>
+
 <body>
   <header>
-    <h1>🚀 Painéis Power BI</h1>
+    <img src="img/Logo Grupo JHC.png.crdownload" alt="Logo Grupo JHC">
+    <h1>PAINÉIS DE INDICADORES ESTRATÉGICOS</h1>
   </header>
+
   <p class="intro">Escolha a área para acessar os painéis desejados:</p>
 
   <div class="dashboard">
-    <!-- Comercial -->
     <div class="card">
-      <h2>🌍 Comercial</h2>
+      <h2>Comercial</h2>
       <a href="https://app.powerbi.com/groups/1cda7474-055d-46ad-baeb-93faea9f5fee/reports/02de288c-53cb-43be-afe9-f4a71ea1d42f/ReportSectioneadff5ebc470aae92b03?experience=power-bi" target="_blank">Cobertura Estoque Novo</a>
       <a href="https://app.powerbi.com/groups/1cda7474-055d-46ad-baeb-93faea9f5fee/reports/3a1e3d79-e35d-46a0-9af5-e8ed9b9f5ae5/ReportSection930682a1b25460897bba?experience=power-bi" target="_blank">E-commerce</a>
-      <a href="https://app.powerbi.com/groups/1cda7474-055d-46ad-baeb-93faea9f5fee/reports/b9f96eb2-06f5-4d0c-8bdc-c306852a9354/a20e7c68803638205fc8?experience=power-bi" target="_blank">Fora de Linhas</a>
+      <a href="https://app.powerbi.com/groups/1cda7474-055d-46ad-baeb-93faea9f5fee/reports/b9f96eb2-06f5-4d0c-8bdc-c306852a9354/a20e7c68803638205fc8?experience=power-bi" target="_blank">Fora de Linha</a>
       <a href="https://app.powerbi.com/groups/1cda7474-055d-46ad-baeb-93faea9f5fee/reports/60db4b92-a20b-4d24-a6e5-75e9e811fbb0/ReportSection5be0f1f0599debcceaa4?experience=power-bi" target="_blank">Gestão de Vendas</a>
     </div>
 
-    <!-- Logística -->
     <div class="card">
-      <h2>🚚 Logística</h2>
+      <h2>Logística Solar</h2>
       <a href="https://app.powerbi.com/groups/716f3546-c9c8-41f7-bb20-d2a3212fbf35/reports/a13cb3ff-5bf0-4430-bb6b-906c4d78345d/dbd1092b6d3816c7c437?experience=power-bi" target="_blank">Carteira de Pedidos</a>
     </div>
 
-    <!-- Inteligência -->
     <div class="card">
-      <h2>🧠 Inteligência</h2>
-      <a href="#" target="_blank">Painel Inteligência 1</a>
+      <h2>Logística Bonno</h2>
+      <a href="#">Check List</a>
+      <a href="#">Divergências</a>
     </div>
 
-    <!-- Auditoria -->
     <div class="card">
-      <h2>🛰️ Auditoria</h2>
-      <a href="#" target="_blank">Check List</a>
-      <a href="#" target="_blank">Divergências</a>
+      <h2>Negócio</h2>
+      <a href="#">Painel Inteligência 1</a>
+    </div>
+
+    <div class="card">
+      <h2>Auditoria</h2>
+      <a href="#">Check List</a>
+      <a href="#">Divergências</a>
+    </div>
+
+    <div class="card">
+      <h2>Gente e Cultura</h2>
+      <a href="#">Check List</a>
+      <a href="#">Divergências</a>
     </div>
   </div>
+
+  <footer>
+    © 2025 Grupo JHC — Painéis Power BI | Desenvolvido por Bernardo
+  </footer>
 </body>
 </html>
