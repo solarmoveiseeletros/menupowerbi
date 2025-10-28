@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar - Painéis Power BI</title>
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      text-align: center;
+      padding: 25px 20px;
+      background: linear-gradient(90deg, #fff, #f5f5f5);
+      border-bottom: 3px solid #f57c00;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header img {
+      width: 110px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      color: #f57c00;
+      font-weight: 600;
+    }
+
+    p.intro {
+      text-align: center;
+      margin: 30px auto 10px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    /* Grid */
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      width: 90%;
+      margin: 30px auto 60px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      padding: 25px 20px;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .card h2 {
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+      color: #f57c00;
+      font-weight: 600;
+    }
+
+    .card a {
+      display: block;
+      margin: 10px 0;
+      padding: 10px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: #333;
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      transition: all 0.2s ease;
+    }
+
+    .card a:hover {
+      background: #f57c00;
+      color: #fff;
+      border-color: #f57c00;
+    }
+
+    footer {
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+      padding: 20px;
+      background: #f5f5f5;
+      border-top: 1px solid #ddd;
+      margin-top: auto;
+    }
+
+    /* Responsivo */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.4rem;
+      }
+      .card h2 {
+        font-size: 1.1rem;
+      }
+      .card a {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="img/Logo Grupo JHC.png.crdownload" alt="Logo Grupo JHC">
+    <h1>PAINÉIS DE INDICADORES OPERACIONAL</h1>
+  </header>
+
+  <p class="intro">Escolha a área para acessar os painéis desejados:</p>
+
+  <div class="dashboard">
+    <div class="card">
+      <h2>Comercial</h2>
+      <a href="https://app.powerbi.com/groups/1cda7474-055d-46ad-baeb-93faea9f5fee/reports/02de288c-53cb-43be-afe9-f4a71ea1d42f/ReportSectioneadff5ebc470aae92b03?experience=power-bi" target="_blank">Cobertura Estoque Novo</a>
+      <a href="https://app.powerbi.com/groups/1cda7474-055d-46ad-baeb-93faea9f5fee/reports/3a1e3d79-e35d-46a0-9af5-e8ed9b9f5ae5/ReportSection930682a1b25460897bba?experience=power-bi" target="_blank">E-commerce</a>
+      <a href="https://app.powerbi.com/groups/1cda7474-055d-46ad-baeb-93faea9f5fee/reports/b9f96eb2-06f5-4d0c-8bdc-c306852a9354/a20e7c68803638205fc8?experience=power-bi" target="_blank">Fora de Linha</a>
+      <a href="https://app.powerbi.com/groups/1cda7474-055d-46ad-baeb-93faea9f5fee/reports/60db4b92-a20b-4d24-a6e5-75e9e811fbb0/ReportSection5be0f1f0599debcceaa4?experience=power-bi" target="_blank">Gestão de Vendas</a>
+    </div>
+
+    <div class="card">
+      <h2>Logística Solar</h2>
+      <a href="https://app.powerbi.com/groups/716f3546-c9c8-41f7-bb20-d2a3212fbf35/reports/a13cb3ff-5bf0-4430-bb6b-906c4d78345d/dbd1092b6d3816c7c437?experience=power-bi" target="_blank">Carteira de Pedidos</a>
+    </div>
+
+    <div class="card">
+      <h2>Logística Bonno</h2>
+      <a href="#">Check List</a>
+      <a href="#">Divergências</a>
+    </div>
+
+    <div class="card">
+      <h2>Negócio</h2>
+      <a href="#">Painel Inteligência 1</a>
+    </div>
+
+    <div class="card">
+      <h2>Auditoria</h2>
+      <a href="#">Check List</a>
+      <a href="#">Divergências</a>
+    </div>
+
+    <div class="card">
+      <h2>Gente e Cultura</h2>
+      <a href="#">Check List</a>
+      <a href="#">Divergências</a>
+    </div>
+      <div class="card">
+          <h2>TI</h2>
+          <a href="#">Check List</a>
+          <a href="#">Divergências</a>
+      </div>
+ 
+  </div>
+
+  <footer>
+    © 2025 Grupo JHC — Painéis Power BI | Desenvolvido pelo Setor de Inteligência.
+  </footer>
+</body>
+</html>
