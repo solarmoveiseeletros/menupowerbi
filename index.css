@@ -1,115 +1,134 @@
-
-    * {
-      box-sizing: border-box;
+* {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-      color: #eee;
+      background-color: #f8f8f8;
+      color: #333;
       min-height: 100vh;
-      overflow-x: hidden;
-      position: relative;
-    }
-
-    /* Estrelas */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
-      opacity: 0.3;
-      z-index: 0;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
-      background: linear-gradient(90deg, #ffbb00, #ff7300);
-      color: white;
-      padding: 25px;
       text-align: center;
-      position: relative;
-      z-index: 1;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      padding: 25px 20px;
+      background: linear-gradient(90deg, #fff, #f5f5f5);
+      border-bottom: 3px solid #f57c00;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header img {
+      width: 110px;
+      height: auto;
+      margin-bottom: 10px;
     }
 
     header h1 {
-      font-size: 2.2rem;
-      letter-spacing: 2px;
-      text-shadow: 0 0 10px rgba(255,255,255,0.6);
+      font-size: 1.8rem;
+      color: #f57c00;
+      font-weight: 600;
     }
 
     p.intro {
       text-align: center;
-      margin: 20px auto;
-      font-size: 1.2rem;
-      color: #ccc;
-      position: relative;
-      z-index: 1;
+      margin: 30px auto 10px;
+      font-size: 1.1rem;
+      color: #000000;
     }
 
-    /* Grid de cards */
-    .dashboard {
+    /* === GRID GERAL DE GRUPOS === */
+    .grupos-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
       max-width: 1200px;
-      margin: 0 auto;
-      padding: 30px;
-      position: relative;
-      z-index: 1;
+      width: 90%;
+      margin: 30px auto 60px;
     }
 
-    .card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 15px;
-      padding: 25px;
+    /* Card de grupo */
+    .grupo {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      padding: 25px 20px;
+      transition: transform 0.2s ease;
       text-align: center;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
-    .card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 15px 40px rgba(255, 183, 0, 0.3);
+    .grupo:hover {
+      transform: translateY(-3px);
     }
 
-    .card h2 {
-      margin-bottom: 20px;
-      font-size: 1.4rem;
-      color: #ffbb00;
-      text-shadow: 0 0 10px rgba(255,183,0,0.7);
+    .grupo h2 {
+      color: #f57c00;
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+      font-weight: 600;
     }
 
-    .card a {
-      display: block;
+    /* === tag detalis === */
+    details {
       margin: 10px 0;
+      border: 1px solid #f57c00;
+      border-radius: 5px;
+      background: #fffaf3;
+      transition: all 0.3s ease;
+      text-align: left;
+    }
+
+    summary {
+      font-weight: 600;
+      color: #f57c00;
+      cursor: pointer;
+      padding: 10px;
+      /*list-style: none;*/
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details[open] {
+      background: #fff6e6;
+      box-shadow: 0 3px 8px rgba(245, 124, 0, 0.15);
+    }
+
+    details a {
+      display: block;
+      color: #f57c00;
       text-decoration: none;
-      color: #eee;
-      padding: 12px 15px;
-      border-radius: 8px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: background 0.3s, color 0.3s, transform 0.2s;
+      padding: 6px 12px;
+      transition: all 0.2s ease;
+      font-weight: 500;
     }
 
-    .card a:hover {
-      background: linear-gradient(90deg, #ffbb00, #ff7300);
+    details a:hover {
+      background-color: #f57c00;
       color: white;
-      transform: scale(1.05);
+      border-radius: 6px;
     }
 
-    /* Responsivo */
+    footer {
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+      padding: 20px;
+      background: #f5f5f5;
+      border-top: 1px solid #ddd;
+      margin-top: auto;
+    }
+
     @media (max-width: 600px) {
       header h1 {
-        font-size: 1.6rem;
-      }
-      .card h2 {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
       }
     }
-  
+
